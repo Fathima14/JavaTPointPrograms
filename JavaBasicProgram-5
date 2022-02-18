@@ -1,0 +1,87 @@
+// Write a JavaTPrograms Basic Programs
+
+public class MyClass {
+    public static void main(String args[]) {
+     
+    // 1. Fibonacci Series 
+      fibonacciSeries();
+      System.out.println();
+      
+    //2. Prime Number      
+      primeNumber();
+      System.out.println();
+      
+    //3. Palindrome Number
+    palindromeNumber();
+    System.out.println();
+    
+    //4.Factorial Number
+    factorialNumber();
+    System.out.println(); 
+    
+    //5.Random Number 
+    randomNumber();
+    
+    } 
+    
+    public static void randomNumber(){
+        System.out.println((int)(Math.random()*100)); // 2digits
+    }
+    
+    public static void factorialNumber(){
+        int n =5;
+        int fact = 1;
+        for (int i=2;i<=5;i++){
+            fact = fact * i;
+        }
+        System.out.println(fact);
+    }
+    
+    public static void palindromeNumber(){
+        int n = 54345;
+        int rev = 0;
+        
+        while (n!=0){
+            rev = rev*10 + (n%10);
+            n = n/10;
+        }
+        if (n == rev)
+            System.out.println("Palindrome");
+        else 
+            System.out.println("Not Palindrome");
+    
+    }
+    
+    public static void primeNumber(){
+        int n = 9;
+        int end = n/2;
+        boolean flag = true;
+        for (int i=2;i<=end;i++){
+            if ((n%i) == 0){
+              flag = false;
+              break;
+            }
+        }
+        
+        if (flag) System.out.println("is Prime");
+        else System.out.println("Not Prime");
+    }
+    
+     public static void fibonacciSeries(){
+         
+      int n = 10;
+      int a = 0;
+      int b = 1;
+      int c = 0;
+      System.out.print(" "+ a + "," + b);
+      
+      for (int i=2;i<n;i++){
+        c = a+b;
+        System.out.print(", "+c);
+        a = b;
+        b = c;
+      }
+      System.out.println();
+    }
+    
+}
